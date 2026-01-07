@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sea-50: #f0f9ff;
+  --color-sea-100: #e0f2fe;
+  --color-sea-200: #bae6fd;
+  --color-sea-300: #7dd3fc;
+  --color-sea-400: #38bdf8;
+  --color-sea-500: #0ea5e9;
+  --color-sea-600: #0284c7;
+  --color-sea-700: #0369a1;
+  --color-sea-800: #075985;
+  --color-sea-900: #0c4a6e;
+  --color-sea-950: #082f49;
+
+  --background-image-gradient-sea: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border-b border-white/20;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
