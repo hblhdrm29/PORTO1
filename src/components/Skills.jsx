@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const skillCategories = [
     {
@@ -21,14 +21,14 @@ const Skills = () => {
         <section id="skills" className="py-20 px-4 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <motion.h2
+                    <Motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold mb-6"
                     >
                         Keahlian Saya
-                    </motion.h2>
+                    </Motion.h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Berbagai teknologi dan metodologi yang saya gunakan untuk mewujudkan ide menjadi produk nyata yang bernilai tinggi.
                     </p>
@@ -36,7 +36,7 @@ const Skills = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {skillCategories.map((category, idx) => (
-                        <motion.div
+                        <Motion.div
                             key={idx}
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -50,16 +50,16 @@ const Skills = () => {
                             </h3>
                             <div className="flex flex-wrap gap-3">
                                 {category.skills.map(skill => (
-                                    <motion.span
+                                    <Motion.span
                                         key={skill}
                                         whileHover={{ scale: 1.1, backgroundColor: '#0ea5e9', color: '#fff' }}
                                         className="px-4 py-2 bg-white text-gray-700 text-sm font-medium rounded-2xl shadow-sm border border-gray-100 cursor-default transition-colors"
                                     >
                                         {skill}
-                                    </motion.span>
+                                    </Motion.span>
                                 ))}
                             </div>
-                        </motion.div>
+                        </Motion.div>
                     ))}
                 </div>
             </div>

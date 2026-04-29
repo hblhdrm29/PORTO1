@@ -11,6 +11,9 @@ import {
 } from 'lucide-react';
 import profileImg from './assets/profile.jpg';
 import blueiyImg from './assets/blueiy.png';
+import kestraImg from './assets/MONITORING_KESTRA.png';
+import lmsImg from './assets/LMS.png';
+import essImg from './assets/ESS DASHBOARD.png';
 
 // Only register ScrollTrigger, useGSAP is a hook
 gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +62,12 @@ const Hero = () => {
 
   return (
     <section id="home" ref={container} className="pt-40 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
+      <div className="flex items-center gap-6 mb-24 about-reveal">
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">Home</h2>
+        <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
+      </div>
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12 text-center">
+
         <div className="flex-1 flex flex-col items-center">
         <h1 className="flex flex-col font-black leading-[0.8] tracking-tighter uppercase select-none mb-16 md:mb-24 items-center">
           {/* PERSPECTIVE SHADOW STACK */}
@@ -150,32 +158,27 @@ const ProjectsGrid = () => {
 
   return (
     <section id="projects" ref={container} className="py-32 px-6 max-w-7xl mx-auto">
-      <div className="flex flex-col mb-24">
-        <h2 className="text-xs uppercase tracking-[0.6em] text-zinc-600 font-bold mb-8 flex items-center gap-4">
-          <span className="w-12 h-[1px] bg-zinc-800"></span>
-          Featured Projects
-        </h2>
-        <p className="text-4xl md:text-6xl font-bold tracking-tighter text-white max-w-3xl leading-[0.9]">
-          Premium solutions for <span className="text-zinc-600">modern business.</span>
-        </p>
+      <div className="flex items-center gap-6 mb-24">
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">Projects</h2>
+        <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ProjectCard 
           title="Kestra Monitor"
-          image={blueiyImg}
+          image={kestraImg}
           description="Integrated monitoring system for Kestra orchestration, featuring real-time alerts and health metrics."
           stack={["React", "gRPC", "Kestra"]}
         />
         <ProjectCard 
-          title="LMS Academy"
-          image={blueiyImg}
+          title="LMS"
+          image={lmsImg}
           description="Scalable Learning Management System with real-time progress tracking and interactive course modules."
           stack={["Vue 3", "Go", "PostgreSQL"]}
         />
         <ProjectCard 
-          title="ESS Enterprise"
-          image={blueiyImg}
+          title="ESS"
+          image={essImg}
           description="Advanced Employee Self-Service dashboard for streamlined HR workflows and automated payroll processing."
           stack={["Next.js", "TypeScript", "Prisma"]}
         />
@@ -235,22 +238,20 @@ const About = () => {
 
   return (
     <section id="about" ref={container} className="py-32 px-6 max-w-7xl mx-auto">
+      <div className="flex items-center gap-6 mb-24 about-reveal">
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">About Me</h2>
+        <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-32">
         <div className="lg:col-span-5 about-reveal">
-          <h2 className="text-xs uppercase tracking-[0.5em] text-zinc-600 font-bold mb-10 flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-zinc-800"></span>
-            About Me
-          </h2>
-          <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-white">
+          <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">
             Crafting <span className="text-zinc-500">modern interfaces</span> where every pixel serves a <span className="text-zinc-500">purpose.</span>
           </p>
         </div>
         
         <div className="lg:col-span-7 about-reveal pt-2">
-          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed mb-8 font-light">
+          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed mb-8 font-light text-justify">
             A Frontend Developer specializing in building modern web applications using Next.js and Vue.js, with robust cross-functional capabilities in Go (Golang) backend development.
-          </p>
-          <p className="text-zinc-500 leading-relaxed max-w-xl">
             I have a proven track record of delivering end-to-end digital solutions, including Employee Self-Service (ESS) dashboards, Learning Management Systems (LMS), and Kestra Monitoring systems integrated with PostgreSQL.
           </p>
         </div>
@@ -297,7 +298,12 @@ const Contact = () => {
 
   return (
     <section id="contact" ref={container} className="py-40 px-6 max-w-7xl mx-auto border-t border-zinc-900">
+      <div className="flex items-center gap-6 mb-24 contact-reveal">
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">Contact</h2>
+        <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
+
         <div className="contact-reveal">
           <h2 className="text-5xl font-semibold mb-8 tracking-tighter leading-tight">Let's build the<br />unconventional.</h2>
           <p className="text-zinc-500 max-w-sm leading-relaxed">Currently available for high-impact roles and freelance architectural consultations.</p>
