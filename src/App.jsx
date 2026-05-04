@@ -27,6 +27,135 @@ import resumeFile from './assets/CV ATS NEW.pdf';
 // Only register ScrollTrigger, useGSAP is a hook
 gsap.registerPlugin(ScrollTrigger);
 
+// --- Preloader Component ---
+
+const Preloader = ({ onComplete }) => {
+  const preloaderRef = useRef();
+  const textRef = useRef();
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      onComplete: onComplete
+    });
+
+    tl.from(textRef.current, {
+      y: 20,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    })
+    .to(textRef.current, {
+      y: -20,
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+      ease: "power3.in"
+    })
+    .to(preloaderRef.current, {
+      y: "-100%",
+      duration: 1,
+      ease: "expo.inOut"
+    });
+  }, []);
+
+  return (
+    <div 
+      ref={preloaderRef}
+      className="fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden"
+    >
+      {/* Aesthetic Monochrome Glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[400px] h-[400px] bg-white/[0.03] rounded-full blur-[100px] animate-pulse"></div>
+        <div className="absolute w-[200px] h-[200px] bg-white/[0.05] rounded-full blur-[60px]"></div>
+      </div>
+
+      <div className="flex flex-col items-center relative z-10">
+        <h1 
+          ref={textRef}
+          className="text-white text-[10px] md:text-xs font-space font-medium uppercase tracking-[1.2em] text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+        >
+          Welcome to my portfolio
+        </h1>
+        <div className="w-12 h-[1px] bg-white/20 mt-6 overflow-hidden">
+           <div className="w-full h-full bg-white animate-progress"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- Custom Cursor Component ---
+
+const CustomCursor = () => {
+  const cursorRef = useRef();
+  const followerRef = useRef();
+
+  useGSAP(() => {
+    const cursor = cursorRef.current;
+    const follower = followerRef.current;
+    
+    const moveCursor = (e) => {
+      gsap.to(cursor, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.1,
+        ease: "power2.out"
+      });
+      gsap.to(follower, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    };
+
+    const handleHover = () => {
+      gsap.to(follower, {
+        scale: 2.5,
+        backgroundColor: "white",
+        duration: 0.3
+      });
+    };
+
+    const handleUnhover = () => {
+      gsap.to(follower, {
+        scale: 1,
+        backgroundColor: "transparent",
+        duration: 0.3
+      });
+    };
+
+    window.addEventListener("mousemove", moveCursor);
+    
+    const links = document.querySelectorAll("a, button, [role='button']");
+    links.forEach(link => {
+      link.addEventListener("mouseenter", handleHover);
+      link.addEventListener("mouseleave", handleUnhover);
+    });
+
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      links.forEach(link => {
+        link.removeEventListener("mouseenter", handleHover);
+        link.removeEventListener("mouseleave", handleUnhover);
+      });
+    };
+  }, []);
+
+  return (
+    <>
+      <div 
+        ref={cursorRef} 
+        className="fixed top-0 left-0 w-1.5 h-1.5 bg-white rounded-full z-[9999] pointer-events-none mix-blend-difference -translate-x-1/2 -translate-y-1/2"
+      />
+      <div 
+        ref={followerRef} 
+        className="fixed top-0 left-0 w-8 h-8 border border-white/50 rounded-full z-[9998] pointer-events-none mix-blend-difference -translate-x-1/2 -translate-y-1/2"
+      />
+    </>
+  );
+};
+
 // --- Modular Components ---
 
 const Navbar = () => (
@@ -519,16 +648,25 @@ const Footer = () => {
 // --- Main App ---
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="bg-black text-zinc-100 min-h-screen selection:bg-zinc-100 selection:text-black">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <ProjectsGrid />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="bg-black text-zinc-100 min-h-screen selection:bg-zinc-100 selection:text-black cursor-none">
+      <CustomCursor />
+      <Preloader onComplete={() => setLoading(false)} />
+      
+      {!loading && (
+        <div className="animate-in fade-in zoom-in-95 duration-1000 ease-out">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <ProjectsGrid />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }
