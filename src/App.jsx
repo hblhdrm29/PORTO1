@@ -22,6 +22,7 @@ import essImg from './assets/ESS DASHBOARD.png';
 import naturuImg from './assets/NATURU.png';
 import revouImg from './assets/REVOU.png';
 import whoareuImg from './assets/whoareu.jpeg';
+import resumeFile from './assets/CV ATS NEW.pdf';
 
 // Only register ScrollTrigger, useGSAP is a hook
 gsap.registerPlugin(ScrollTrigger);
@@ -107,8 +108,8 @@ const Hero = () => {
         </h1>
         <div className="hero-text mt-4 flex flex-col items-center gap-8">
           <a 
-            href="/resume.pdf" 
-            download 
+            href={resumeFile} 
+            download="Resume_Habillah_Darma.pdf" 
             className="group flex items-center gap-3 px-6 py-3 border border-zinc-900 rounded-full text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-500 hover:text-white hover:border-zinc-700 transition-all duration-500"
           >
             <Download size={14} className="group-hover:animate-bounce" />
@@ -204,7 +205,7 @@ const ProjectCard = ({ title, description, stack, image, github, demo, isPrivate
           ))}
         </div>
 
-        <p className="text-zinc-500 leading-relaxed text-[10px] md:text-xs font-medium line-clamp-2">
+        <p className="text-zinc-500 leading-relaxed text-[10px] md:text-xs font-medium text-justify">
           {description}
         </p>
       </div>
@@ -226,8 +227,8 @@ const ProjectsGrid = () => {
         <ProjectCard 
           title="Kestra Monitor"
           image={kestraImg}
-          description="Integrated monitoring system for Kestra orchestration, featuring real-time alerts and health metrics."
-          stack={["React", "gRPC", "Kestra"]}
+          description="Proyek ini adalah dashboard monitoring berbasis Next.js dan PostgreSQL yang dirancang untuk memantau status eksekusi workflow, log, dan aktivitas harian pada platform orkestrasi Kestra secara real-time."
+          stack={["React", "Nextjs", "PostgreSQL", "Typescript"]}
           github="https://github.com/hblhdrm29/kestra-monitor"
           demo="#"
           isPrivate={true}
@@ -235,40 +236,40 @@ const ProjectsGrid = () => {
         <ProjectCard 
           title="LMS"
           image={lmsImg}
-          description="Scalable Learning Management System with real-time progress tracking and interactive course modules."
-          stack={["Vue 3", "Go", "PostgreSQL"]}
+          description="Proyek ini adalah pengembangan Antarmuka (UI) dari platform Learning Management System (LMS) modern yang dirancang untuk menyediakan dashboard interaktif bagi berbagai peran pengguna (role-based access)."
+          stack={["React", "Nextjs", "Typescript", "TailwindCSS"]}
           github="https://github.com/hblhdrm29/Clone_LMS"
           demo="https://frontend-lms-hblhdrm29.vercel.app/"
         />
         <ProjectCard 
           title="ESS"
           image={essImg}
-          description="Advanced Employee Self-Service dashboard for streamlined HR workflows and automated payroll processing."
-          stack={["Next.js", "TypeScript", "Prisma"]}
+          description="Proyek ini adalah pengembangan Antarmuka (UI) Dashboard Karyawan berbasis web. Fokus utamanya adalah membangun sistem navigasi yang cepat, tampilan yang informatif, dan pengalaman pengguna (UX) yang mulus untuk kebutuhan internal"
+          stack={["Next.js", "TypeScript", "React", "TailwindCSS"]}
           github="https://github.com/hblhdrm29/Website-Latihan"
           demo="https://frontend-ess-hblhdrm29.vercel.app/"
         />
         <ProjectCard 
           title="Blueiy POS"
           image={blueiyImg}
-          description="A comprehensive point-of-sale system designed for speed and reliability in high-traffic retail environments."
-          stack={["React", "Go", "PostgreSQL"]}
+          description="Project ini adalah sebuah SaaS POS (Point of Sale) System Kasir yang dirancang untuk mengelola operasional bisnis seperti transaksi, manajemen staf, shift kerja, dan diskon."
+          stack={["React","Next.js", "Go", "Typescript","PostgreSQL" , "Supabase" , "Drizzle ORM" , "Shadcn UI" , "Tailwind CSS"]}
           github="https://github.com/hblhdrm29/Saas-POS"
           demo="https://saas-pos-blueiy-hblhdrm29.vercel.app/"
         />
         <ProjectCard 
           title="Naturu"
           image={naturuImg}
-          description="A sustainable nature-focused platform designed to connect enthusiasts with eco-friendly initiatives and resources."
-          stack={["Next.js", "Redis", "Tailwind"]}
+          description="Project ini adalah website gabut bertema Naruto tapi ada perpaduan Codingan"
+          stack={["Vue" , "Vite" , "CSS" , ]}
           github="https://github.com/hblhdrm29/NATURU"
           demo="https://naturu-hblhdrm29.vercel.app/"
         />
         <ProjectCard 
           title="RevoU Assignment"
           image={revouImg}
-          description="A comprehensive technical assignment showcase developed during the RevoU Fullstack Software Engineering program."
-          stack={["Vue 3", "Tailwind", "Vite"]}
+          description="Ini Tugas mini coding membuat Todo List diRevou untuk mendapatkan sertifikat"
+          stack={["HTML", "CSS", "JS"]}
           github="https://github.com/hblhdrm29/Mini-Coding-by-Revou"
           demo="https://mini-coding-by-revou-hblhdrm29.vercel.app/"
         />
