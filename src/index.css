@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @theme {
   --color-zinc-50: #fafafa;
@@ -12,6 +13,7 @@
   --color-zinc-800: #27272a;
   --color-zinc-900: #18181b;
   --color-zinc-950: #09090b;
+  --font-space: "Space Grotesk", sans-serif;
 }
 
 @layer base {
