@@ -47,3 +47,24 @@ html {
 ::-webkit-scrollbar-thumb {
   @apply bg-zinc-800 rounded-full;
 }
+
+/* PC/Laptop Hover Effects */
+@media (hover: hover) {
+  .project-card:hover {
+    transform: scale(1.05) translateY(-8px);
+    background-color: #f0f0f0;
+    border-color: #d4d4d8;
+  }
+
+  /* Invert text colors on hover for readability */
+  .project-card:hover h3,
+  .project-card:hover p,
+  .project-card:hover span {
+    color: #09090b !important;
+  }
+
+  .project-card:hover .bg-zinc-900 {
+    background-color: #e4e4e7 !important;
+    border-color: #d4d4d8 !important;
+  }
+}
