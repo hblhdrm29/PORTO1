@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -416,6 +416,37 @@ const TechTag = ({ name }) => (
 const About = () => {
   const container = useRef();
   const techs = ["Nextjs", "Vue", "React", "Go", "Prisma", "Drizzle", "PostgreSQL", "MySQL", "Docker", "TypeScript", "Tailwind CSS", "Github"];
+  const [roleText, setRoleText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(100);
+
+  useEffect(() => {
+    const roles = ["Habillah Darma", "Frontend Developer"];
+    const handleType = () => {
+      const i = loopNum % roles.length;
+      const fullText = roles[i];
+
+      setRoleText(
+        isDeleting 
+          ? fullText.substring(0, roleText.length - 1)
+          : fullText.substring(0, roleText.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 50 : 100);
+
+      if (!isDeleting && roleText === fullText) {
+        setTimeout(() => setIsDeleting(true), 3000);
+      } else if (isDeleting && roleText === "") {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setTypingSpeed(500);
+      }
+    };
+
+    const timer = setTimeout(handleType, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [roleText, isDeleting, loopNum, typingSpeed]);
 
   useGSAP(() => {
     gsap.from(".about-reveal", {
@@ -445,9 +476,10 @@ const About = () => {
         <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-32">
-        <div className="lg:col-span-5 about-reveal">
-          <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">
-            Crafting <span className="text-zinc-500">modern interfaces</span> where every pixel serves a <span className="text-zinc-500">purpose.</span>
+        <div className="lg:col-span-5 about-reveal pt-8 md:pt-12">
+          <p className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.2] text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">
+            Hi, ALL <br />
+            I'm <span className="text-zinc-500">{roleText}</span><span className="text-zinc-500 animate-pulse">|</span>
           </p>
         </div>
         
