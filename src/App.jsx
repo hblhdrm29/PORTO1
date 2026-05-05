@@ -275,7 +275,7 @@ const ProjectCard = ({ title, description, stack, image, github, demo, isPrivate
   };
 
   return (
-    <div className="project-card group relative bg-zinc-950 rounded-[1.5rem] overflow-hidden border border-zinc-900 shadow-sm transition-all duration-700 hover:shadow-2xl hover:border-zinc-700 hover:-translate-y-2">
+    <div className="project-card group relative bg-zinc-950 rounded-[1.5rem] overflow-hidden border border-zinc-900 shadow-sm transition-all duration-700 hover:shadow-2xl hover:border-zinc-700 hover:-translate-y-2 active:scale-[0.98]">
       
       {/* Private Overlay - Full Card Blur */}
       <div 
@@ -291,7 +291,7 @@ const ProjectCard = ({ title, description, stack, image, github, demo, isPrivate
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-contain grayscale brightness-[0.9] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out"
+            className="w-full h-full object-contain md:grayscale md:brightness-[0.9] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out"
           />
           {/* Subtle vignette to blend edges */}
           <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.5)] pointer-events-none"></div>
