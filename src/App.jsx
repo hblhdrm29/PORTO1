@@ -22,7 +22,6 @@ import essImg from './assets/ESS DASHBOARD.png';
 import naturuImg from './assets/NATURU.png';
 import revouImg from './assets/REVOU.png';
 import whoareuImg from './assets/whoareu.jpeg';
-import resumeFile from './assets/CV ATS NEW.pdf';
 
 // Only register ScrollTrigger, useGSAP is a hook
 gsap.registerPlugin(ScrollTrigger);
@@ -237,7 +236,7 @@ const Hero = () => {
         </h1>
         <div className="hero-text mt-4 flex flex-col items-center gap-8">
           <a 
-            href={resumeFile} 
+            href="/Resume_Habillah_Darma.pdf" 
             download="Resume_Habillah_Darma.pdf" 
             className="group flex items-center gap-3 px-6 py-3 border border-zinc-900 rounded-full text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-500 hover:text-white hover:border-zinc-700 transition-all duration-500"
           >
