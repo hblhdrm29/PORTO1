@@ -11,7 +11,7 @@ const translations = {
     },
     projects: {
       title: "Projects", private: "Private Repository",
-      kestra: "This project is a monitoring dashboard based on Next.js and PostgreSQL designed to monitor workflow execution status, logs, and daily activities on the Kestra orchestration platform in real-time.",
+      kestra: "This project is a Next.js and PostgreSQL-based monitoring dashboard designed to monitor workflow execution status, logs, and daily activities on the Kestra orchestration platform in real-time.",
       lms: "This project is the User Interface (UI) development of a modern Learning Management System (LMS) platform designed to provide an interactive dashboard for various user roles (role-based access).",
       ess: "This project is the User Interface (UI) development of a Web-based Employee Dashboard. Its main focus is building a fast navigation system, informative display, and seamless user experience (UX) for internal needs.",
       pos: "This project is a SaaS POS (Point of Sale) Cashier System designed to manage business operations such as transactions, staff management, work shifts, and discounts.",

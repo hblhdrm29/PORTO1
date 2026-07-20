@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useLanguage } from '../context/LanguageContext';
+import shinjiImg from '../assets/bleach_shinji.png';
 
 const Preloader = ({ onComplete, setRole }) => {
   const { t } = useLanguage();
@@ -9,6 +10,7 @@ const Preloader = ({ onComplete, setRole }) => {
   const preloaderRef = useRef();
   const textRef = useRef();
   const selectionRef = useRef();
+  const imageRef = useRef();
 
   const handleSelection = (selectedRole) => {
     setRole(selectedRole);
@@ -32,20 +34,39 @@ const Preloader = ({ onComplete, setRole }) => {
         onComplete: onComplete
       });
 
-      tl.fromTo(textRef.current, {
-        y: 20,
-        opacity: 0
-      }, {
-        y: 0,
+      // Split text into characters manually since we don't have SplitText
+      const textElement = textRef.current;
+      const text = textElement.innerText;
+      textElement.innerHTML = '';
+      
+      const chars = text.split('').map(char => {
+        const span = document.createElement('span');
+        span.innerText = char === ' ' ? '\u00A0' : char; // preserve spaces
+        span.style.opacity = '0';
+        textElement.appendChild(span);
+        return span;
+      });
+
+      tl.to(chars, {
         opacity: 1,
-        duration: 1,
-        ease: "power3.out"
+        duration: 0.05,
+        stagger: 0.05,
+        ease: "none"
       })
-      .to(textRef.current, {
+      .fromTo(imageRef.current, {
+        clipPath: "inset(100% 0 0 0)", // Starts hidden from bottom
+        filter: "blur(10px) brightness(0)",
+      }, {
+        clipPath: "inset(0% 0 0 0)", // Reveals fully to the top
+        filter: "blur(0px) brightness(1)",
+        duration: 2, // Longer duration for rendering effect
+        ease: "power2.out"
+      }) // Removed the "-=0.5" so it waits for text to finish completely
+      .to([textRef.current, imageRef.current], {
         y: -20,
         opacity: 0,
         duration: 1,
-        delay: 1,
+        delay: 0.5,
         ease: "power3.in"
       })
       .to(preloaderRef.current, {
@@ -122,14 +143,29 @@ const Preloader = ({ onComplete, setRole }) => {
       )}
 
       {step === 'welcome' && (
-        <div className="flex flex-col items-center relative z-10">
+        <div className="flex flex-col items-center relative z-10 gap-8">
           <h1 
             ref={textRef}
-            className="text-white text-[10px] md:text-xs font-space font-medium uppercase tracking-[1.2em] text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] opacity-0"
+            className="text-white text-[10px] md:text-xs font-space font-medium uppercase tracking-[1.2em] text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] opacity-100"
           >
             {t.preloader.welcome}
           </h1>
-          <div className="w-12 h-[1px] bg-white/20 mt-6 overflow-hidden">
+
+          {/* Shinji Image Container */}
+          <div 
+            ref={imageRef}
+            className="relative w-48 md:w-64 aspect-square overflow-hidden opacity-100 mix-blend-screen"
+          >
+            <img 
+              src={shinjiImg} 
+              alt="Loading Character" 
+              className="w-full h-full object-cover grayscale"
+            />
+            {/* Scanline overlay for aesthetic */}
+            <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(255,255,255,0.1)_2px,rgba(255,255,255,0.1)_4px)] pointer-events-none"></div>
+          </div>
+
+          <div className="w-12 h-[1px] bg-white/20 overflow-hidden">
              <div className="w-full h-full bg-white animate-progress"></div>
           </div>
         </div>

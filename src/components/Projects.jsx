@@ -92,11 +92,12 @@ const ProjectCard = ({ title, description, stack, image, github, demo, isPrivate
 
 const Projects = () => {
   const container = useRef();
+  const { t } = useLanguage();
 
   return (
     <section id="projects" ref={container} className="py-32 px-6 max-w-7xl mx-auto">
       <div className="flex items-center gap-6 mb-24">
-        <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">Projects</h2>
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">{t.projects.title}</h2>
         <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
       </div>
 
@@ -104,7 +105,7 @@ const Projects = () => {
         <ProjectCard
           title="Kestra Monitor"
           image={kestraImg}
-          description="Developed a monitoring dashboard using Next.js that retrieves and visualizes workflow execution status, logs, and daily activity data from a PostgreSQL database."
+          description={t.projects.kestra}
           stack={["React", "Nextjs", "PostgreSQL", "Typescript"]}
           github="https://github.com/hblhdrm29/kestra-monitor"
           demo="#"
@@ -113,7 +114,7 @@ const Projects = () => {
         <ProjectCard
           title="LMS"
           image={lmsImg}
-          description="Developed the user interface (UI) for a modern Learning Management System (LMS) platform, providing interactive dashboards with role-based access for different types of users."
+          description={t.projects.lms}
           stack={["React", "Nextjs", "Typescript", "TailwindCSS"]}
           github="https://github.com/hblhdrm29/Clone_LMS"
           demo="https://frontend-lms-hblhdrm29.vercel.app/"
@@ -121,7 +122,7 @@ const Projects = () => {
         <ProjectCard
           title="ESS"
           image={essImg}
-          description="Developed a web-based Employee Dashboard UI focused on providing fast navigation, informative data visualization, and a seamless user experience (UX) for internal business needs."
+          description={t.projects.ess}
           stack={["Next.js", "TypeScript", "React", "TailwindCSS"]}
           github="https://github.com/hblhdrm29/Website-Latihan"
           demo="https://frontend-ess-hblhdrm29.vercel.app/"
@@ -129,7 +130,7 @@ const Projects = () => {
         <ProjectCard
           title="Blueiy POS"
           image={blueiyImg}
-          description="This is a personal SaaS Point of Sale (POS) project built from scratch to explore business management system development, including transaction management, staff management, work shifts, and discount handling."
+          description={t.projects.pos}
           stack={["React", "Next.js", "Go", "Typescript", "PostgreSQL", "Supabase", "Drizzle ORM", "Shadcn UI", "Tailwind CSS"]}
           github="https://github.com/hblhdrm29/Saas-POS"
           demo="https://saas-pos-blueiy-hblhdrm29.vercel.app/"
@@ -137,7 +138,7 @@ const Projects = () => {
         <ProjectCard
           title="Naturu"
           image={naturuImg}
-          description="Built a personal frontend project featuring a Naruto-themed website, focusing on UI design, animations, and interactive user experience."
+          description={t.projects.naturu}
           stack={["Vue", "Vite", "CSS",]}
           github="https://github.com/hblhdrm29/NATURU"
           demo="https://naturu-hblhdrm29.vercel.app/"
@@ -145,7 +146,7 @@ const Projects = () => {
         <ProjectCard
           title="RevoU Assignment"
           image={revouImg}
-          description="Developed a Todo List application as a mini frontend coding project for the RevoU certification program."
+          description={t.projects.revou}
           stack={["HTML", "CSS", "JS"]}
           github="https://github.com/hblhdrm29/Mini-Coding-by-Revou"
           demo="https://mini-coding-by-revou-hblhdrm29.vercel.app/"
