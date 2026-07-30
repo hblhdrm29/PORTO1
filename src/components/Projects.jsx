@@ -98,7 +98,6 @@ const Projects = () => {
     <section id="projects" ref={container} className="py-32 px-6 max-w-7xl mx-auto">
       <div className="flex items-center gap-6 mb-24">
         <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">{t.projects.title}</h2>
-        <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

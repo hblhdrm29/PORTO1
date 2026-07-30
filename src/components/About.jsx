@@ -73,7 +73,6 @@ const About = ({ role }) => {
     <section id="about" ref={container} className="py-32 px-6 max-w-7xl mx-auto">
       <div className="flex items-center gap-6 mb-24 about-reveal">
         <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">{t.about.title}</h2>
-        <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-32">
         <div className="lg:col-span-5 about-reveal pt-8 md:pt-12">
@@ -93,7 +92,6 @@ const About = ({ role }) => {
       <div className="about-reveal w-full relative">
         <div className="flex items-center gap-6 mb-12">
           <h3 className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 font-bold whitespace-nowrap">{t.about.tech}</h3>
-          <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
         </div>
         
         <div className="w-full relative overflow-hidden py-4">

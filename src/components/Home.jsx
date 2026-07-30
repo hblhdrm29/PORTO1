@@ -36,7 +36,6 @@ const Home = ({ role }) => {
     <section id="home" ref={container} className="pt-40 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
       <div className="flex items-center gap-6 mb-24 about-reveal">
         <h2 className="text-[10px] uppercase tracking-[0.6em] text-zinc-600 font-bold whitespace-nowrap">{t.home.title}</h2>
-        <div className="w-full h-[1px] bg-gradient-to-r from-zinc-900 via-zinc-800 to-transparent"></div>
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12 text-center">
 

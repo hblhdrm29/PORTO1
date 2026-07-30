@@ -56,7 +56,7 @@ const Contact = () => {
   }, { scope: container });
 
   return (
-    <section id="contact" ref={container} className="py-32 px-6 max-w-7xl mx-auto border-t border-zinc-900">
+    <section id="contact" ref={container} className="py-32 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16 contact-reveal">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">{t.contact.title}</h2>
       </div>
