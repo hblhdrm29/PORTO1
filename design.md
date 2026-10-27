@@ -1,7 +1,7 @@
-# Frontend Developer Portfolio Design Documentation
+# Fullstack Developer Portfolio Design Documentation
 
 ## 1. Overview
-This is a minimalist, single page portfolio website for a Frontend Developer and Data Engineer built using React and styled with Tailwind CSS. It focuses on a sleek, dark theme aesthetic with smooth animations powered by GSAP.
+This is a minimalist, single page portfolio website for a Fullstack Developer and Data Engineer built using React and styled with Tailwind CSS. It focuses on a sleek, dark theme aesthetic with smooth animations powered by GSAP.
 
 ## 2. Global Aesthetics
 * Theme: Dark mode by default (Background: Black #000000, Text: Light Gray #fafafa, zinc 100).
@@ -23,7 +23,7 @@ This is a minimalist, single page portfolio website for a Frontend Developer and
 * Purpose: Initial loading screen and role selection.
 * Design: 
   * Monochrome glow background effect.
-  * Presents a choice: Frontend Developer vs Data Engineer (currently disabled or coming soon).
+  * Presents a choice: Fullstack Developer vs Data Engineer (currently disabled or coming soon).
   * Minimalist buttons with hover effects (border changes, tracking expansion).
   * After selection, a Welcome sequence with a text reveal and a loading bar.
 

@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [role, setRole] = useState('Frontend Developer');
+  const [role, setRole] = useState('Fullstack Developer');
 
   return (
     <div className="bg-black text-zinc-100 min-h-screen selection:bg-zinc-100 selection:text-black cursor-none">

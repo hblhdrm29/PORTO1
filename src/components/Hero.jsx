@@ -20,7 +20,7 @@ const Hero = () => {
                         </span>
                     </h1>
                     <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Halo! Saya seorang Frontend Developer yang berfokus pada pembuatan antarmuka minimalis,
+                        Halo! Saya seorang Fullstack Developer yang berfokus pada pembuatan antarmuka minimalis,
                         responsif, dan berperforma tinggi untuk hasil yang luar biasa.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

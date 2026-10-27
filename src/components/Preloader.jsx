@@ -99,10 +99,10 @@ const Preloader = ({ onComplete, setRole }) => {
           
           <div className="flex flex-col md:flex-row gap-6 w-full max-w-2xl justify-center items-center">
             <button 
-              onClick={() => handleSelection('Frontend Developer')} 
+              onClick={() => handleSelection('Fullstack Developer')} 
               className="group relative w-full md:w-64 py-12 border border-zinc-800 hover:border-white transition-colors duration-500 bg-zinc-950/30 backdrop-blur-sm flex flex-col items-center justify-center gap-3 cursor-pointer"
             >
-              <span className="text-white text-lg md:text-xl font-poppins font-medium z-10">{t.preloader.frontend}</span>
+              <span className="text-white text-lg md:text-xl font-poppins font-medium z-10">{t.preloader.fullstack}</span>
               <span className="text-zinc-500 text-xs uppercase tracking-[0.2em] z-10">{t.preloader.developer}</span>
             </button>
 

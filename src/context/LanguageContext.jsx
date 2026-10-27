@@ -3,7 +3,7 @@ import React, { createContext, useState, useContext } from 'react';
 const translations = {
   en: {
     nav: { home: "Home", about: "About", project: "Project", contact: "Contact" },
-    preloader: { choose: "Choose Your Path", frontend: "Frontend", data: "Data", developer: "Developer", engineer: "Engineer", or: "OR", welcome: "Welcome to my portfolio" },
+    preloader: { choose: "Choose Your Path", fullstack: "Fullstack", data: "Data", developer: "Developer", engineer: "Engineer", or: "OR", welcome: "Welcome to my portfolio" },
     home: { title: "Home", download: "Download My Resume" },
     about: {
       title: "About Me", hi: "Hi, ALL", im: "I'm", tech: "Technical Stack",
@@ -22,7 +22,7 @@ const translations = {
   },
   id: {
     nav: { home: "Beranda", about: "Tentang", project: "Proyek", contact: "Kontak" },
-    preloader: { choose: "Pilih Jalur Anda", frontend: "Frontend", data: "Data", developer: "Developer", engineer: "Engineer", or: "ATAU", welcome: "Selamat datang di portofolio saya" },
+    preloader: { choose: "Pilih Jalur Anda", fullstack: "Fullstack", data: "Data", developer: "Developer", engineer: "Engineer", or: "ATAU", welcome: "Selamat datang di portofolio saya" },
     home: { title: "Beranda", download: "Unduh Resume Saya" },
     about: {
       title: "Tentang Saya", hi: "Halo Semua", im: "Saya", tech: "Teknologi",
