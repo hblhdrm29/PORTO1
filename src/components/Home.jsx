@@ -70,9 +70,11 @@ const Home = ({ role }) => {
           </h1>
           <div className="hero-text mt-4 flex flex-col items-center gap-8">
             <a
-              href="/CV_FULLSTACK.pdf"
+              href={`${import.meta.env.BASE_URL}CV_FULLSTACK.pdf`}
               download="CV_FULLSTACK.pdf"
-              className="group flex items-center gap-3 px-6 py-3 border border-zinc-900 rounded-full text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-500 hover:text-white hover:border-zinc-700 transition-all duration-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-6 py-3 border border-zinc-900 rounded-full text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-500 hover:text-white hover:border-zinc-700 transition-all duration-500 cursor-pointer"
             >
               <Download size={14} className="group-hover:animate-bounce" />
               {t.home.download}

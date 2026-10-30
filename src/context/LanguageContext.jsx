@@ -7,7 +7,7 @@ const translations = {
     home: { title: "Home", download: "Download My Resume" },
     about: {
       title: "About Me", hi: "Hi, ALL", im: "I'm", tech: "Technical Stack",
-      desc: "A {role} specializing in building modern web applications using Next.js and Vue.js, with robust cross functional capabilities in Go (Golang) backend development. I have a proven track record of delivering end to end digital solutions, including Employee Self Service (ESS) dashboards, Learning Management Systems (LMS), and Kestra Monitoring systems integrated with PostgreSQL."
+      desc: "Full Stack Developer with experience building end-to-end web applications. Proficient in Next.js, React, Vue.js, and TypeScript on the frontend, Go and Express.js on the backend, and PostgreSQL, SQL Server, and MySQL for databases. Uses Docker for deployment. Developed the frontend for the ESS and LMS employee platforms, then built a Kestra Monitoring dashboard as a full-stack project to track ETL flow results. Also built two independent projects, a multi-tenant SaaS POS and a clinic information system, both implementing role-based access control (RBAC)."
     },
     projects: {
       title: "Projects", private: "Private Repository",
@@ -26,7 +26,7 @@ const translations = {
     home: { title: "Beranda", download: "Unduh Resume Saya" },
     about: {
       title: "Tentang Saya", hi: "Halo Semua", im: "Saya", tech: "Teknologi",
-      desc: "Seorang {role} yang berspesialisasi dalam membangun aplikasi web modern menggunakan Next.js dan Vue.js, dengan kemampuan lintas fungsi yang kuat dalam pengembangan backend Go (Golang). Saya memiliki rekam jejak yang terbukti dalam memberikan solusi digital ujung ke ujung (end to end), termasuk dasbor Employee Self Service (ESS), Learning Management Systems (LMS), dan sistem Monitoring Kestra yang terintegrasi dengan PostgreSQL."
+      desc: "Full Stack Developer dengan pengalaman membangun aplikasi web end-to-end. Terbiasa memakai Next.js, React, Vue.js dan TypeScript di Frontend, Go dan Express.js di Backend, serta PostgreSQL, SQL Server dan MySQL untuk database. Deployment menggunakan Docker. Mengembangkan frontend ESS dan LMS untuk karyawan, lalu membangun dashboard Monitoring Kestra secara Fullstack untuk memantau hasil flow ETL. Dua proyek mandiri, SaaS POS dengan database multi-tenant dan sistem informasi klinik, sama-sama menerapkan kontrol akses berbasis peran (RBAC)."
     },
     projects: {
       title: "Proyek", private: "Repositori Privat",

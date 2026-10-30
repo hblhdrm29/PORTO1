@@ -16,19 +16,19 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('submitting');
-    
+
     const form = e.target;
     const data = new FormData(form);
-    
+
     try {
-      const response = await fetch("https://formspree.io/f/xgodayvk", {
+      const response = await fetch("https://formspree.io/f/xeaazwrp", {
         method: "POST",
         body: data,
         headers: {
           'Accept': 'application/json'
         }
       });
-      
+
       if (response.ok) {
         setStatus('success');
         form.reset();
